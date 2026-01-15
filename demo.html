@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vet Chatbot Demo</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; padding: 20px; }
+        .content { max-width: 800px; margin: 0 auto; line-height: 1.6; }
+        h1 { color: #333; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Veterinary Clinic Demo Page</h1>
+        <p>This is a sample website hosting the chatbot SDK.</p>
+        <p>The chatbot should appear in the bottom right corner.</p>
+        
+        <h2>Configuration</h2>
+        <p>We are simulating a logged-in user "Alice" with pet "Max".</p>
+
+        <!-- Chatbot Config & Script -->
+        <script>
+            window.VetChatbotConfig = {
+                userName: 'Alice',
+                petName: 'Max',
+                theme: {
+                    primary: '#28a745', // Custom green theme
+                    primaryDark: '#218838'
+                }
+            };
+        </script>
+        
+        <!-- Load the built SDK (Simulating CDN) -->
+        <script src="./dist/chatbot.js"></script>
+    </div>
+</body>
+</html>
