@@ -1,16 +1,70 @@
-# React + Vite
+# 🐾 Veterinary Chatbot UI (SDK)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend component of the Veterinary Chatbot. It is designed as a plug-and-play SDK that can be embedded into any website.
 
-Currently, two official plugins are available:
+## ✨ Key Highlights
+- **Single File SDK**: Bundles into a single JavaScript file (`chatbot.js`) for easy deployment.
+- **Shadow DOM Isolation**: Uses Shadow DOM to prevent CSS conflicts with the host website.
+- **Modern UI/UX**: Built with React and styled-components for a premium, responsive feel.
+- **Conversational Booking**: A multi-step flow that turns appointment scheduling into a natural conversation.
+- **Customizable**: Configurable via a global window object.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
+- **Framework**: React 19
+- **Build Tool**: Vite
+- **Styling**: Styled-components & Lucide-react icons
+- **State Management**: Custom hooks (`useChat`)
 
-## React Compiler
+## 📂 Directory Structure
+```text
+src/
+├── components/       # Chat widget UI elements (Message, Input, Booking Form)
+├── hooks/            # Logic for handling chat signals and UI state
+├── services/         # API clients for backend communication
+├── theme/            # Design tokens (Colors, Spacing, Typography)
+├── App.jsx           # SDK Wrapper and Shadow DOM setup
+└── main.jsx          # Custom element definition for the SDK
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚙️ Development
 
-## Expanding the ESLint configuration
+### 1. Install Dependencies
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2. Run Local Development Server
+```bash
+npm run dev
+```
+
+### 3. Build the SDK
+To generate the production-ready `chatbot.js` file:
+```bash
+npm run build
+```
+The output will be in the `dist/` directory.
+
+## 🔌 Integration Guide
+
+To add the chatbot to any website, include the following code before the closing `</body>` tag:
+
+```html
+<!-- Configuration -->
+<script>
+  window.VetChatbotConfig = {
+    userId: "optional_user_id",
+    userName: "John Doe",
+    petName: "Buddy"
+  };
+</script>
+
+<!-- SDK Script -->
+<script src="https://your-domain.com/chatbot.js"></script>
+```
+
+## 🧪 Testing
+Use `demo.html` to test the SDK integration locally. Simply open it in your browser while the backend is running.
+
+## 📄 License
+ISC
